@@ -62,14 +62,11 @@
     </div>
 
     <script>
-        // Check if the user has accepted cookies
-        if (localStorage.getItem('cookieAccepted') !== 'true') {
+        document.addEventListener('DOMContentLoaded', function () {
             document.getElementById('cookiePopup').style.display = 'block';
-        }
+        });
     
-        // Function to set cookie acceptance and hide the popup
-        function acceptCookies() {
-            localStorage.setItem('cookieAccepted', 'true');
+        function hideCookiePopup() {
             document.getElementById('cookiePopup').style.display = 'none';
         }
     </script>
