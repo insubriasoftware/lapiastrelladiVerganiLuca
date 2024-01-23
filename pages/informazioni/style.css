@@ -4,8 +4,6 @@ body {
     scrollbar-width: none;
     padding-top: 80px;
     margin: 0;
-    display: flex;
-    flex-direction: column;
 }
 
 body::-webkit-scrollbar {
@@ -69,8 +67,72 @@ body::-webkit-scrollbar {
     visibility: hidden;
 }
 
-#container-contatti {
-    display: inline-flex;
+.divisione {
+    visibility: hidden;
+}
+
+#body-part {
+    padding-bottom: 5%;
+}
+
+#map {
+    height: 400px;
+    width: 400px;
+}
+
+@media screen and (min-width: 1024px) {
+    #body-part {
+        display: inline-flex;
+    }
+
+    #section-work {
+        margin-left: 25%;
+        width: 72%;
+        max-height: 72%;
+        overflow:auto;
+        border: 2px solid orange;
+    }
+
+    .image {
+        width: 25%;
+        height: auto;
+    }
+
+    .articolo {
+        padding-left: 0px;
+        display: inline-flex;
+    }
+
+    .testo-articolo {
+        padding-left: 10%;
+    }
+}
+
+@media screen and (max-width:767px) and (max-width: 1023) {
+    #body-part {
+        display: inline-flex;
+    }
+    
+    #section-work {
+        margin-left: 25%;
+        width:72%;
+        max-height: 72%;
+        overflow:auto;
+    }
+
+    .image {
+        width: 25%;
+        height: auto;
+    }
+
+    .articolo {
+        padding-left: 0px;
+        display: inline-flex;
+    }
+
+    .testo-articolo {
+        padding-left: 10%;
+    }
 }
 
 @media screen and (max-width: 767px) {
@@ -167,7 +229,38 @@ body::-webkit-scrollbar {
         margin: 0;
     }
 
-    #container-contatti {
+    #body-part {
         display: inline-block;
+    }
+
+    #mappa-descr {
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+    }
+
+    #map {
+        width: 350px;
+        height: 350px;
+    }
+
+    #section-work {
+        margin-left: 2%;
+        margin-right: 2%;
+        text-align: center;
+        overflow:auto;
+    }
+
+    .image {
+        width: 45%;
+        height: auto;
+    }
+
+    .articolo {
+        display: inline-block;
+    }
+
+    .divisione {
+        visibility: visible;
     }
 }

@@ -14,11 +14,70 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
     <link rel="shortcut icon" href="img/logo.png">
+
+    <style>
+        .cookie-popup {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: #f0f0f0;
+            padding: 10px;
+            text-align: center;
+            box-shadow: 0px 0px 10px 0px #888;
+        }
+
+        .cookie-popup p {
+            margin: 5px 0;
+        }
+
+        .cookie-popup button {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
 </head>
 
 <body class="d-flex flex-column min-vh-100" style="background-color: #f1e8db;">
+
+    <div class="cookie-popup" id="cookiePopup">
+        <p>
+            Noi e terze parti selezionate utilizziamo cookie o tecnologie simili per finalità tecniche e, con il tuo consenso, anche per le finalità di funzionalità, esperienza, misurazione e marketing (con annunci personalizzati) come specificato nella cookie policy.
+
+            Per quanto riguarda la pubblicità, noi e 797 terze parti selezionate, potremmo utilizzare dati di geolocalizzazione precisi e l’identificazione attraverso la scansione del dispositivo, al fine di archiviare e/o accedere a informazioni su un dispositivo e trattare dati personali come i tuoi dati di utilizzo, per le seguenti finalità pubblicitarie: pubblicità e contenuti personalizzati, valutazione dei contenuti e dell’efficacia della pubblicità, ricerche sul pubblico, sviluppo di servizi.
+            
+            Puoi liberamente prestare, rifiutare o revocare il tuo consenso, in qualsiasi momento, accedendo al pannello delle preferenze. Se presti il tuo consenso, sarà valido solo su questo dominio. Il rifiuto del consenso può rendere non disponibili le relative funzioni.
+            
+        </p>
+        <button onclick="acceptCookies()">Got it!</button>
+    </div>
+
+    <script>
+        // Check if the user has accepted cookies
+        if (localStorage.getItem('cookieAccepted') !== 'true') {
+            document.getElementById('cookiePopup').style.display = 'block';
+        }
+    
+        // Function to set cookie acceptance and hide the popup
+        function acceptCookies() {
+            localStorage.setItem('cookieAccepted', 'true');
+            document.getElementById('cookiePopup').style.display = 'none';
+        }
+    </script>
+
+
     <div id="menuButton" class="ciao">
         <img onclick="toggleMenu()" id="bottone_menu" src="img/navbar_barrette.png" alt="img/navbar_barrette" style="height: 30px; width: auto;">
+        <img src="img/logo.png" style="height: 30px; width: auto;">
     </div>
     <div id="menu">
         <ul>
@@ -26,13 +85,13 @@
                 <li><a href="index.html" class="active">HOME</a></li>
             </div>
             <div style="background-color: #daa55b; border-radius: 10px; margin: 2%;">
-                <li><a href="pages/aticoli/index.html">ARTICOLI</a></li>
+                <li><a href="pages/articoli/index.html">ARTICOLI</a></li>
             </div>
             <div style="background-color: #daa55b; border-radius: 10px; margin: 2%;">
                 <li><a href="pages/contatti/index.html">CONTATTACI</a></li>
             </div>
             <div style="background-color: #daa55b; border-radius: 10px; margin: 2%;">
-                <li><a href="pages/informaizoni/">INFORMAZIONI</a></li>
+                <li><a href="pages/informazioni/index.html">INFORMAZIONI</a></li>
             </div>
         </ul>
     </div>
@@ -40,9 +99,9 @@
     <div id="navbar" class="fixed-top">
         <b>
             <a href="index.html" class="active">HOME</a>
-            <a href="pages/aticoli/index.html">ARTICOLI</a>
+            <a href="pages/articoli/index.html">ARTICOLI</a>
             <a href="pages/contatti/index.html">CONTATTACI</a>
-            <a href="pages/informaizoni/index.html">INFORMAZIONI</a>
+            <a href="pages/informazioni/index.html">INFORMAZIONI</a>
         </b>
     </div>
 
