@@ -80,22 +80,29 @@ body::-webkit-scrollbar {
     width: 400px;
 }
 
+.image {
+    border: 2px solid black;
+    border-radius: 10px;
+}
+
 @media screen and (min-width: 1024px) {
     #body-part {
         display: inline-flex;
     }
 
     #section-work {
+        margin-top: 25px;
         margin-left: 25%;
         width: 72%;
+        height: 750px;
         max-height: 72%;
         overflow:auto;
         border: 2px solid darkcyan;
     }
 
     .image {
-        width: 25%;
-        height: 15%;
+        width: 20vh;
+        height: 20vh;
     }
 
     .articolo {
